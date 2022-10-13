@@ -4,7 +4,7 @@ import { FlatList, Text, View, Image } from 'react-native';
 export default function UserScreen() {
   const [data, setData] = useState([]);
 
-  const getMovies = async () => {
+  const getUsers = async () => {
     try {
       const response = await fetch('https://reqres.in/api/users');
       const json = await response.json();
@@ -15,7 +15,7 @@ export default function UserScreen() {
   }
 
   useEffect(() => {
-    getMovies();
+    getUsers();
   }, []);
 
   const Item = item => {
